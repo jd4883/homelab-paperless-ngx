@@ -4,6 +4,12 @@ Paperless-ngx — document management with OCR, tagging, and search. Uses **bjw-
 
 ---
 
+## 🗺️ Topology
+
+![paperless-ngx topology](docs/img/topology.svg)
+
+<sub>Generated from this repo’s `values.yaml`, `Chart.yaml` and `argocd/` manifests. Source: [`docs/img/topology.mmd`](docs/img/topology.mmd).</sub>
+
 ## Chart contents
 
 - **App:** Paperless-ngx (ghcr.io/paperless-ngx/paperless-ngx) via bjw-s app-template; port 8000.
