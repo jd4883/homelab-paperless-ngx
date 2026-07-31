@@ -10,10 +10,15 @@ flowchart LR
   end
   subgraph NS["paperless-ngx"]
     direction TB
-    APP["paperless-ngx<br/>chart 0.1.0"]:::app
-    DYN[("dynamic PVCs")]:::store
+    APP["paperless-ngx"]:::app
+  end
+  subgraph VOLS["persistent volumes"]
+    direction LR
+    V0[("data<br/>20Gi")]:::store
+    V1[("media<br/>50Gi")]:::store
+    V2[("consume<br/>5Gi")]:::store
   end
   HOSTS --> APP
-  APP --> DYN
+  APP --> VOLS
   TLS["TLS<br/>expectedbehaviors.com-tls"]:::sec
   TLS -. "cert" .-> HOSTS
